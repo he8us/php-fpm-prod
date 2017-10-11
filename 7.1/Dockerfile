@@ -1,4 +1,4 @@
-FROM he8us/php-fpm-common:7.0
+FROM he8us/php-fpm-common:7.1
 
 MAINTAINER Cedric Michaux <cedric@he8us.be>
 
