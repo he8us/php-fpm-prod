@@ -6,9 +6,10 @@ ENV APCU_VERSION 5.1.8
 ENV APCU_BC_VERSION 1.0.3
 
 RUN \
-    apk update --no-cache \
-    && apk add --no-cache \
-        --virtual .phpize-deps $PHPIZE_DEPS \
+    apk --no-cache add \
+        --virtual .phpize-deps \
+        build-base \
+        autoconf \
     && pecl install apcu-$APCU_VERSION \
     && pecl install apcu_bc-$APCU_BC_VERSION \
     && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
